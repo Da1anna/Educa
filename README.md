@@ -1,2 +1,2 @@
-#用Django2.0搭建的在线教育网站
-python 3.6.z
+# 用Django2.0搭建的在线教育网站
+Python版本：python 3.6.0
