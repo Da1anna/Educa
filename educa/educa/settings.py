@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #my app
     'courses.apps.CoursesConfig',
+    'students.apps.StudentsConfig',
     #将默认管理模块放在最后
     'django.contrib.admin',
+    #第三方
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#用户登陆后重定向至注册的课程列表
+from django.urls import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
+
+#媒体文件
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

@@ -24,4 +24,12 @@ urlpatterns = [
          name='module_content_delete'),
     path('module/<int:module_id>/', views.ModuleContentListView.as_view(),
          name='module_content_list'),
+
+    #第11章
+    #某科目的全部课程
+    path('subject/<slug:subject>/', views.CourseListView.as_view(),
+         name='course_list_subject'),
+    #单门课程的概要内容
+    path('<slug:slug>/', views.CourseDetailView.as_view(),
+         name='course_detail'),
 ]
